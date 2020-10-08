@@ -23,7 +23,7 @@
         select * from authorinfo as m where m.Keywords like concat('%',#{keyword},'%')
     </select>
     <select id="getPaperCitation" resultType="java.lang.Integer">
-        select `Article Citation Count` from Documentinfo as t
+        select `Article Citation Count` from documentinfo as t
         where t.`Document Title` like concat('%',#{title},'%')
     </select>
 
