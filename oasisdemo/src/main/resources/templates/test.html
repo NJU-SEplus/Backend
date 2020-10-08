@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script src="/js/jquery-1.10.1.js"></script>
+<script src="/js/request.js"></script>
+<script>
+    getRequest(
+        "/Portrait/Affiliation/showByCountry",
+        function (res) {
+            console.log(res.content);
+        },
+        function () {
+            alert("Not Found");
+        }
+    )
+</script>
+
+</body>
+</html>

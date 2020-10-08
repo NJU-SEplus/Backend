@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapper">
+
+
+    <select id="selectTopTenPublication" resultMap="AuthorPortraitVO">
+        select * from authorinfo as t
+		order by t.publication_count desc
+        limit 10
+    </select>
+
+    <select id="getAuthorCount" resultType="java.lang.Integer">
+        select count(*) from authorinfo as t
+        where t.affiliation_id like concat('%',#{id},'%')
+    </select>
+
+
+    <select id="selectByAffId" resultType="com.example.oasisdemo.vo.AuthorVO">
+        select * from authorinfo as m where m.affiliation_id like concat('%',#{id},'%')
+    </select>
+
+    <select id="selectByAuthorKeyword" resultType="com.example.oasisdemo.vo.AuthorVO">
+        select * from authorinfo as m where m.Keywords like concat('%',#{keyword},'%')
+    </select>
+    <select id="getPaperCitation" resultType="java.lang.Integer">
+        select `Article Citation Count` from Documentinfo as t
+        where t.`Document Title` like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectAuthorById" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m
+        where m.author_id = #{id}
+    </select>
+
+    <select id="selectAuthorByName" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m
+        where m.author_name like concat('%',#{name},'%')
+    </select>
+
+    <select id="selectAllAuthor" resultMap="AuthorPortraitVO">
+        select * from authorinfo
+    </select>
+
+    <select id="getPaperAuthors" resultType="java.lang.String">
+        select t.Authors from `1to1document` as t
+        where t.Title like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectRelationById" resultType="com.example.oasisdemo.vo.RelationVO">
+        SELECT * FROM authorrelations a WHERE a.a_id=#{id} or a.b_id=#{id}
+    </select>
+
+    <select id="selectABRelation" resultType="com.example.oasisdemo.vo.RelationVO">
+        SELECT * FROM authorrelations a WHERE (a.a_id=#{Aid} and a.b_id=#{Bid}) or (a.a_id=#{Bid} and a.b_id=#{Aid})
+    </select>
+
+    <update id="updateHeat" >
+        update authorinfo as m set m.heat=#{heat}
+        where m.author_id = #{id}
+    </update>
+
+    <select id="selectAuthorByHeat" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m order by heat Desc limit 100
+    </select>
+
+    <resultMap id="AuthorVO" type="com.example.oasisdemo.vo.AuthorVO">
+        <id column="author_id" property="author_id"></id>
+        <result column="author_name" property="author_name"></result>
+        <result property="affiliation" column="affiliation"></result>
+        <result property="publication_count" column="publication_count"></result>
+        <result column="affiliation_id" property="affiliation_id"></result>
+        <result column="Keywords" property="Keywords"></result>
+        <result column="heat" property="heat"></result>
+    </resultMap>
+
+    <resultMap id="AuthorPortraitVO" type="com.example.oasisdemo.vo.AuthorPortraitVO">
+        <constructor>
+            <idArg column="author_id" javaType="java.lang.Integer"/>
+            <arg column="author_name" javaType="java.lang.String"/>
+            <arg column="affiliation_id" javaType="java.lang.Integer"/>
+            <arg column="affiliation" javaType="java.lang.String"/>
+            <arg column="publication_count" javaType="java.lang.Integer"/>
+            <arg column="PublicationYears" javaType="java.lang.String"/>
+            <arg column="PaperTitles" javaType="java.lang.String"/>
+            <arg column="Keywords" javaType="java.lang.String"/>
+            <arg column="heat" javaType="java.lang.Integer"/>
+        </constructor>
+<!--        <id column="author_id" property="author_id"></id>-->
+<!--        <result column="author_name" property="author_name"></result>-->
+<!--        <result property="affiliation_id" column="affiliation_id"></result>-->
+<!--        <result property="affiliation" column="affiliation"></result>-->
+<!--        <result property="publication_count" column="publication_count"></result>-->
+    </resultMap>
+
+    <resultMap id="RelationVO" type="com.example.oasisdemo.vo.RelationVO">
+        <result column="a_name" property="a_name"></result>
+        <result column="a_id" property="a_id"></result>
+        <result column="a_affiliation" property="a_affiliation"></result>
+        <result column="b_name" property="b_name"></result>
+        <result column="b_id" property="b_id"></result>
+        <result column="b_affiliation" property="b_affiliation"></result>
+        <result column="relation" property="relation"></result>
+        <result column="coworkpapers" property="coworkpapers"></result>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>OASIS manifestation</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/nav.css">
+		<link rel="stylesheet" type="text/css" href="/css/footer.css">
+		<link rel="stylesheet" style="text/css" href="/css/visual.css">
+		<link rel="stylesheet" type="text/css" href="/css/browse.css"/>
+	</head>
+	
+	<body>
+		
+		<nav class="navbar navbar-default navbar-inverse">
+  			<div class="container">
+    			<div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true" aria-controls="navbar">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">SE-Ⅲ</a>
+    			</div>
+
+   				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
+			      <ul class="nav navbar-nav">
+			        <li><a href="/index">Home</a></li>
+			        <li><a href="/search">Search</a></li>
+			        <li class="active"><a href="#">Browse</a><span class="sr-only">(current)</span></li>
+				  	<li><a href="/visual">Visual</a></li>
+				  	<li><a href="/about">About</a></li>
+			      </ul>
+			      
+			      
+			      <ul class="nav navbar-nav navbar-right">
+			        <li>
+			        	<a id="help-a" tabindex="0" data-placement="auto" data-trigger="focus" class="btn btn-lg" data-toggle="popover" data-content="Developed by SE-Ⅲ team." data-original-title="" title="">
+			        		Help
+			        	</a>
+			        </li>
+			      </ul>
+			      
+    			</div><!-- /.navbar-collapse -->
+  			</div><!-- /.container-fluid -->
+			<div class="text-center text-primary">
+				<p>Welcome to Online graph system for academics!</p>
+			</div>
+		</nav>
+
+		<div class="container interest-show">
+			<div class="row">
+				<div class="col-md-8 rank">
+					<table class="table table-hover">
+						<div><span class="text-info">Academic Ranking (Author)</span></div>
+						<tbody class="author">
+							<tr>
+								<th>Rank</th>
+								<th>Id</th>
+								<th>Author Name</th>
+								<th>Affiliation</th>
+								<th>Publication Count</th>
+								<th>Heat</th>
+							</tr>
+						</tbody>
+						<tfoot></tfoot>
+					</table>
+				</div>
+
+				<div class="col-md-4">
+					<table class="table table-hover" >
+						<div><span class="text-info">Academic Ranking (Region)</span></div>
+						<tbody class="region">
+							<tr>
+								<th>Rank</th>
+								<th>Country</th>
+								<th>Heat</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+<!--		<div id="charts6"></div>-->
+
+
+		<script type="text/javascript" src="/js/jquery-1.10.1.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/nav.js"></script>
+		<script type="text/javascript" src="/js/request.js"></script>
+		<script type="text/javascript" src="/js/echarts.min.js"></script>
+		<script type="text/javascript" src="/js/echarts-wordcloud.min.js"></script>
+		<script type="text/javascript" src="/js/makeCharts.js"></script>
+		<script type="text/javascript" src="/js/visual.js"></script>
+		<script type="text/javascript" src="/js/showAuthor.js"></script>
+		<script type="text/javascript" src="/js/browse.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.oasisdemo.data.DocumentDisplay.DocumentDisplayMapper">
+
+    <select id="selectDocumentSummaryVOByTitle" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where m.Title
+        like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectDocumentSummaryVOByAuthorName" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where m.Authors
+        like concat('%',#{author},'%')
+    </select>
+
+    <select id="selectDocumentSummaryVOByPublicationYear" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where m.Publication_Year=#{year}
+    </select>
+
+    <select id="selectDocumentSummaryVOByAffiliationName" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where m.Affiliations
+        like concat('%',#{affiliation},'%');
+    </select>
+
+    <select id="selectDocumentSummaryVOByKeyword" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where concat(m.Author_Keywords,",",m.IEEE_terms,",",m.INSPEC_controlled,",",m.INSPEC_noncontrolled)
+        like concat('%',#{keyword},'%');
+    </select>
+
+    <select id="selectDocumentSummaryByAll" resultMap="DocumentSummaryVO">
+        select * from 1to1document as t
+        where
+        t.Authors like concat('%',#{AuthorName},'%')
+        and t.Affiliations like concat('%',#{Affiliation},'%')
+        and t.Publication_Year like concat('%',#{PublicationYear},'%')
+        and (t.Author_Keywords like concat('%',#{Keywords},'%')
+        or t.Author_Keywords is NULL)
+        order by Publication_Year desc
+    </select>
+
+    <select id="selectDocumentByDoi" resultMap="DocumentVO">
+        select * from documentinfo as t
+        where t.DOI like concat('%',#{doi},'%')
+    </select>
+
+    <select id="selectTopTenReference" resultMap="DocumentVO">
+        select * from documentinfo as t
+        where t.`Reference count` >87
+		order by `Reference Count` desc
+    </select>
+
+    <select id="getDocumentCount" resultType="java.lang.Integer">
+        select count(*) from 1to1document as t
+        where t.affiliation_id like concat('%',#{id},';%') or t.affiliation_id like concat('%;',#{id},'%')
+        or t.affiliation_id=#{id}
+    </select>
+
+    <select id="getDocumentCountByAuthorId" resultType="java.lang.Integer">
+        select count(*) from 1to1document as t
+        where t.author_id like concat('%',#{id},',%') or t.author_id=#{id}
+        or t.author_id like concat('%,',#{id},'%')
+    </select>
+
+
+    <select id="selectByDoi" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m where m.DOI=#{DOI}
+    </select>
+
+
+    <select id="getDocumentCountByAffIdAndYear" resultType="java.lang.Integer">
+        select count(*) from
+        (select * from 1to1document as t
+        where t.affiliation_id like concat('%;',#{id},';%')
+        or t.affiliation_id like concat(#{id},';%')
+        or t.affiliation_id=#{id}) as m
+        where m.Publication_Year=#{year}
+    </select>
+
+    <select id="getDocumentCountByAuthorIdAndYear" resultType="java.lang.Integer">
+        select count(*) from
+        (select * from 1to1document as t
+        where t.author_id like concat('%;',#{id},';%')
+        or t.author_id like concat(#{id},';%')
+        or t.author_id=#{id}) as m
+        where m.Publication_Year=#{year}
+    </select>
+
+    <select id="getDocumentCountByYearAndKeyword" resultType="java.lang.Integer">
+        select count(*) from 1to1document as t
+        where t.Author_KeyWords like concat('%',#{keyword},'%') and t.Publication_Year=#{year}
+    </select>
+
+    <select id="getRefCount" resultType="java.lang.Integer">
+        select SUM(`Reference Count`) from 1to1document as t left join documentinfo as t1
+        on t.DOI=t1.DOI
+        where t.affiliation_id=#{id}
+    </select>
+
+    <select id="selectByAffId" resultType="java.lang.String">
+        select t.DOI from 1to1document as t left join documentinfo as t1
+        on t.DOI=t1.DOI
+        where t.affiliation_id=#{id} order by `Reference Count` desc limit 10
+    </select>
+
+    <select id="selectAllDocByAffId" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as t
+        where t.affiliation_id like concat('%',#{id},',%')
+        or t.affiliation_id like concat('%,',#{id},'%')
+        or t.affiliation_id=#{id}
+    </select>
+
+    <select id="selectAllDocByKeyword" resultType="com.example.oasisdemo.vo.DocumentSummaryVO">
+        select * from 1to1document as m  where m.Author_KeyWords like concat('%',#{keyword},'%')
+    </select>
+
+    <resultMap id="DocumentSummaryVO" type="com.example.oasisdemo.vo.DocumentSummaryVO">
+        <id column="DOI" property="DOI"></id>
+        <result column="Title" property="Title"></result>
+        <result column="Authors" property="Authors"></result>
+        <result column="Affiliations" property="Affiliations"></result>
+        <result column="Publication_Year" property="Publication_Year"></result>
+        <result column="Author_Keywords" property="Author_KeyWords"></result>
+        <result column="IEEE_terms" property="IEEE_terms"></result>
+        <result column="INSPEC_controlled" property="INSPEC_controlled"></result>
+        <result column="INSPEC_noncontrolled" property="INSPECnonControlledTerm"></result>
+        <result column="affiliation_id" property="affiliation_id"></result>
+        <result column="author_id" property="author_id"></result>
+    </resultMap>
+
+    <resultMap id="DocumentVO" type="com.example.oasisdemo.vo.DocumentVO">
+        <id column="DOI" property="DOI"></id>
+        <result column="Document Title" property="Title"></result>
+        <result property="Authors" column="Authors"></result>
+        <result property="Affiliations" column="Author Affiliations"></result>
+        <result property="PublicationYear" column="Publication Year"></result>
+        <result property="PublicationTitle" column="Publication Title"></result>
+        <result property="KeyWords" column="Author Keywords"></result>
+        <result property="StartPage" column="Start Page"></result>
+        <result property="EndPage" column="End Page"></result>
+        <result property="PDFlink" column="PDF Link"></result>
+        <result property="IEEEterms" column="IEEE Terms"></result>
+        <result property="ReferenceCount" column="Reference Count"></result>
+        <result column="affiliation_id" property="affiliation_id"></result>
+    </resultMap>
+
+</mapper>

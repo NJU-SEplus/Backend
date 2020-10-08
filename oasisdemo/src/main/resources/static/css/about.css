@@ -1,0 +1,49 @@
+/*footer.navbar{
+	background-color: #333;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}*/
+
+body{
+	height: 100%;
+}
+
+.offence{
+	background-color: coral;
+}
+
+.container hr{
+	background-color: coral;
+	height: 1px;
+	
+}
+
+#detail-se{
+	margin-bottom: 30px;
+}
+
+footer.navbar{
+	position: absolute;
+	bottom:0;
+	left: 0;
+	width: 100%;
+}
+
+@media only screen and (max-width: 991px) {
+	footer#about-navbar{
+		position: relative;
+		top: 10px;
+		left: 0;
+		width: 100%;
+		clear: both;
+	}
+	/*body:last-child:after{
+		content: "where";
+		display: table;
+		height: 260px;
+	}*/
+}
+
+

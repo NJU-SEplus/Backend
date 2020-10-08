@@ -1,0 +1,31 @@
+#result span{
+    font-family:"Impact";
+}
+
+#result h5{
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+#result .result-content{
+    padding: 5px 10px;
+    background-color: lightsteelblue;
+    width: 500px;
+    margin: 30px auto;
+}
+
+#result .btn-nav{
+    width: 150px;
+    margin: 10px auto;
+    font-weight: lighter;
+    font-size: 16px;
+    text-align: center;
+}
+
+#result .btn-nav button{
+    background-color: orange;
+    padding: 5px;
+    margin: 5px;
+    border: none;
+}

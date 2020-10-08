@@ -1,0 +1,15 @@
+.from span{
+	margin:0 5px;
+	color: gainsboro;
+}
+
+.nav-tabs>li.active>a{
+	background-color: #d9edf7;
+	color:#31708f ;
+	font-style: italic;
+}
+
+span.d-head{
+	width: 75px;
+	font-weight: bold;
+}

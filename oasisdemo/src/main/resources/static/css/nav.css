@@ -1,0 +1,12 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.text-center p{
+	color: floralwhite;
+}
+
+body{
+	background-image: url(../img/bcg1.png);
+}
