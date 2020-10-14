@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Visualization</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/css/nav.css">
+		<link rel="stylesheet" type="text/css" href="/css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/visual.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/nav.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/font.css"/>
+		<link rel="stylesheet" type="text/css" href="../static/css/visual.css"/>
+	</head>
+
+	<body>
+
+		<nav class="navbar navbar-default navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">SE-Ⅲ</a>
+				</div>
+
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
+					<ul class="nav navbar-nav">
+						<li><a href="/index">Home</a></li>
+						<li><a href="/search">Search</a></li>
+						<li><a href="/browse">Browse</a></li>
+						<li class="active"><a href="/visual">Visual <span class="sr-only">(current)</span></a></li>
+						<li><a href="/about">About</a></li>
+					</ul>
+
+
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a id="help-a" tabindex="0" data-placement="auto" data-trigger="focus" class="btn btn-lg" data-toggle="popover" data-content="Developed by SE-Ⅲ team." data-original-title="" title="">
+								Help
+							</a>
+						</li>
+					</ul>
+
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+			<div class="text-center text-primary">
+				<p>Welcome to Online graph system for academics!</p>
+			</div>
+		</nav>
+
+		<div id="visual-search" class="container-fluid">
+
+			<div class="search-zone">
+				<span class="text-center">OASIS</span>
+				<span class="text-center">Visualization</span>
+				<div class="search-form">
+					<form>
+						<div class="search-div">
+							<select name="search-type" class="form-control">
+								<option value="Author">Author</option>
+								<option value="Affiliation">Affiliation</option>
+								<option value="Field">Field</option>
+							</select>
+						</div>
+						<div class="search-div">
+							<input type="text" class="form-control" />
+						</div>
+						<div class="search-div">
+							<a href="javascript:;" class="search-btn">
+								<span class="glyphicon glyphicon-search"></span>
+							</a>
+							<!--<input type="button" value="search"/>-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<hr>
+
+
+		<div class="chartsContainer">
+			<div id="charts5" style="width: 1100px;height: 600px"></div>
+			<div id="charts6" style="width: 1100px;height: 600px"></div>
+		</div>
+
+
+		<script type="text/javascript" src="/js/jquery-1.10.1.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/nav.js"></script>
+		<script type="text/javascript" src="/js/request.js"></script>
+		<script type="text/javascript" src="/js/echarts.min.js"></script>
+		<script type="text/javascript" src="/js/echarts-wordcloud.min.js"></script>
+		<script type="text/javascript" src="/js/makeCharts.js"></script>
+		<script type="text/javascript" src="/js/showAuthor.js"></script>
+		<script type="text/javascript" src="/js/showField.js"></script>
+		<script type="text/javascript" src="/js/visual.js"></script>
+		<script type="text/javascript" src="/js/world.js"></script>
+		<script type="text/javascript" src="../static/js/jquery-1.10.1.js"></script>
+		<script type="text/javascript" src="../static/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../static/js/nav.js"></script>
+		<script type="text/javascript" src="../static/js/request.js"></script>
+
+	</body>
+
+
+</html>

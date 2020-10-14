@@ -1,0 +1,33 @@
+.foot-nav{
+	background-color: #f6f6e6;
+	/*margin-top: -70px;*/
+}
+
+footer.navbar{
+	background-color: #333;
+	/*position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;*/
+}
+
+footer > .container{
+	color: floralwhite;
+	position: relative;
+}
+
+.foot-container .pull-right{
+	position: absolute;
+	right: 5px;
+	bottom: 10px;
+}
+
+.foot-container .pull-right *{
+	display: inline-block;	
+	margin-right: 8px;
+	color: white;
+}
+
+.foot-container .pull-right a:link{text-decoration: none;}
+.foot-container .pull-right a:hover{text-decoration: none;}
+

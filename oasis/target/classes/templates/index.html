@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>OASIS CSEⅢ</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/nav.css">
+	<link rel="stylesheet" type="text/css" href="/css/footer.css">
+	<link rel="stylesheet" type="text/css" href="/css/home.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/result.css">
+	<link rel="stylesheet" type="text/css" href="/css/detail.css">
+	<!--不能引入layui插件,会破坏footer的布局-->
+	<!--<link rel="stylesheet" type="text/css" href="/lib/layui-v2.5.6/layui/css/layui.css"/>-->
+</head>
+
+<body>
+
+
+
+<nav class="navbar navbar-default navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">SE-Ⅲ</a>
+		</div>
+
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" aria-expanded="true">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+				<li><a href="/search">Search</a></li>
+				<li><a href="/browse">Browse</a></li>
+				<li><a href="/visual">Visual</a></li>
+				<li><a href="/about">About</a></li>
+			</ul>
+
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a id="help-a" tabindex="0" data-placement="auto" data-trigger="focus" class="btn btn-lg" data-toggle="popover" data-content="Developed by SE-Ⅲ team." data-original-title="" title="">
+						Help
+					</a>
+				</li>
+			</ul>
+
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+	<div class="text-center text-primary">
+		<p>Welcome to Online graph system for academics!</p>
+	</div>
+</nav>
+
+<!--navigation ends here-->
+
+<div class="search-container">
+	<div class="container">
+		<h2 class="text-center">Online graph system for academics</h2>
+		<h3 class="text-center">Communication makes better</h3>
+		<div class="search-bar">
+			<form >
+				<div class="row">
+					<div class="col-md-offset-2 col-lg-offset-2 col-xl-offset-2">
+						<div class="search-div">
+							<select name="search-type" class="form-control">
+								<option value="Author">Author</option>
+								<option value="Institution">Institution</option>
+								<option value="Keywords">Keywords</option>
+								<option value="PublicationYear">Year</option>
+								<option value="title">Title</option>
+							</select>
+						</div>
+						<div class="search-div">
+							<input type="text" class="form-control"/>
+						</div>
+						<div id="search-btn" class="search-div">
+							<input type="button" value="Search"></input>
+						</div>
+					</div>
+				</div>
+
+			</form>
+			<div class="advanced-search text-center"><a href="/search">Advanced Search</a></div>
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container">
+	<h3>Daily News</h3>
+	<div id="thumbs" class="row">
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="img/antibiotic.jpg" alt="antibiotic">
+				<div class="caption">
+					<h4><a href="https://www.sciencedaily.com/releases/2020/02/200220141748.htm">MIT have identified a powerful antibiotic using ML</a></h4>
+					<p class="text-primary"><a href="https://www.sciencedaily.com/releases/2020/02/200220141748.htm">view more</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="/img/light.jpg" alt="controls light with light">
+				<div class="caption">
+					<h4><a href="https://www.sciencedaily.com/releases/2020/02/200205132245.htm">The future of computation is bright -- literally</a></h4>
+					<p class="text-primary"><a href="https://www.sciencedaily.com/releases/2020/02/200205132245.htm">view more</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="/img/stock.jpg" alt="Quantum computing concept">
+				<div class="caption">
+					<h4><a href="https://www.sciencedaily.com/releases/2020/01/200129143345.htm">A novel pair of quantum dots was imaged</a></h4>
+					<p class="text-primary"><a href="https://www.sciencedaily.com/releases/2020/01/200129143345.htm">view more</a></p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+
+<div class="container">
+	<h3>Document Recommendation</h3>
+	<div id="thumbs2" class="row">
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="/img/android.jpg" alt="android">
+				<div class="caption">
+					<h4><a href="https://ieeexplore.ieee.org/document/8812097">Search-Based Energy Testing of Android. IEEE</a></h4>
+					<p class="text-primary"><a href="https://ieeexplore.ieee.org/document/8812097">Details</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="/img/neural.png" alt="neural machine on code changes">
+				<div class="caption">
+					<h4><a href="https://ieeexplore.ieee.org/document/8811910">Learning Code Changes Via Neural Machine Translation. IEEE</a></h4>
+					<p class="text-primary"><a href="https://ieeexplore.ieee.org/document/8811910">Details</a></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-6 col-md-4 img-thumbnail">
+			<div class="thumbnail">
+				<img src="/img/bigdata.jpg" alt="antibiotic">
+				<div class="caption">
+					<h4><a href="https://ieeexplore.ieee.org/document/7203130">International Workshop on Big Data Software Engineering</a></h4>
+					<p class="text-primary"><a href="https://ieeexplore.ieee.org/document/7203130">Details</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--footer starts here -->
+<!--navbar-fixed-bottom-->
+<footer id="home-navbar" class="navbar">
+	<div class="foot-nav">
+		<div class="container">
+			<div>
+				<h3 class="text-center">Thirsty for overview of documents and authors?</h3>
+				<h4 class="text-center"><a href="/browse">browse</a> it!</h4>
+				<br>
+				<br>
+				<p class="text-center">LICENSE BY NOBODY</p>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="container foot-container">
+		<div class="pull-left">
+			<h4>NJU Software</h4>
+		</div>
+		<div class="pull-right">
+			<a href="http://www.baidu.com">support</a>
+			<span>License</span>
+			<span>Contact Us</span>
+		</div>
+	</div>
+</footer>
+
+<script type="text/javascript" src="/js/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/nav.js"></script>
+<script type="text/javascript" src="/js/request.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script type="text/javascript" src="/js/detail.js"></script>
+<script type="text/javascript">
+	getRequest(
+			"/Portrait/Direction",
+			function (res) {
+				console.log(res.content);
+			},
+			function (err) {
+				alert('Not found');
+			}
+
+	)
+</script>
+
+
+</body>
+</html>

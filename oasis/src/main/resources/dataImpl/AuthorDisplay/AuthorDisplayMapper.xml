@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapper">
+
+
+    <select id="selectTopTenPublication" resultMap="AuthorPortraitVO">
+        SELECT au.author_id,au.author_name,au.affiliation,n.id_count AS publication_count FROM(
+        SELECT id,count(id) AS id_count FROM(
+        SELECT
+            SUBSTRING_INDEX(SUBSTRING_INDEX(t.author_id,';',help_topic_id+1),';',-1) AS id
+        FROM
+            documentinfo AS t,mysql.help_topic
+        WHERE
+            help_topic_id <![CDATA[<]]> LENGTH(t.author_id)-LENGTH(REPLACE(t.author_id,';',''))+1) AS m
+        GROUP BY m.id
+        ORDER by id_count DESC
+        LIMIT 12) AS n,authorinfo AS au
+        where n.id!='' AND n.id!='default'
+        and au.author_id=n.id
+    </select>
+
+    <select id="getAuthorCount" resultType="java.lang.Integer">
+        select count(*) from authorinfo as t
+        where t.affiliation_id like concat('%',#{id},'%')
+    </select>
+
+
+    <select id="selectByAffId" resultType="com.example.oasisdemo.vo.AuthorVO">
+        select * from authorinfo as m where m.affiliation_id like concat('%',#{id},'%')
+    </select>
+
+    <select id="selectByAuthorKeyword" resultType="com.example.oasisdemo.vo.AuthorVO">
+        select * from authorinfo as m where m.Keywords like concat('%',#{keyword},'%')
+    </select>
+
+    <select id="selectAuthorById" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m
+        where m.author_id = #{id}
+    </select>
+
+    <select id="selectAuthorByName" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m
+        where m.author_name like concat('%',#{name},'%')
+    </select>
+
+    <select id="selectAllAuthor" resultMap="AuthorPortraitVO">
+        select * from authorinfo
+    </select>
+
+    <select id="getPaperAuthors" resultType="java.lang.String">
+        select t.Author from documentinfo as t
+        where t.Title like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectRelationById" resultType="com.example.oasisdemo.vo.RelationVO">
+        SELECT * FROM authorrelations a WHERE a.a_id=#{id} or a.b_id=#{id}
+    </select>
+
+    <select id="selectABRelation" resultType="com.example.oasisdemo.vo.RelationVO">
+        SELECT * FROM authorrelations a WHERE (a.a_id=#{Aid} and a.b_id=#{Bid}) or (a.a_id=#{Bid} and a.b_id=#{Aid})
+    </select>
+
+    <update id="updateHeat" >
+        update authorinfo as m set m.heat=#{heat}
+        where m.author_id = #{id}
+    </update>
+
+    <select id="selectAuthorByHeat" resultMap="AuthorPortraitVO">
+        select * from authorinfo as m order by heat Desc limit 100
+    </select>
+
+    <select id="getPaperCitation" resultType="java.lang.Integer">
+        select citing_count from documentinfo as t
+        where t.title like concat('%',#{title},'%')
+    </select>
+
+    <select id="selectAuthorPapersById" resultMap="PaperVO">
+        select * from documentinfo as t
+        where t.author_id like concat(#{id},';%')
+        or t.author_id like concat('%;',#{id},';%')
+    </select>
+
+    <select id="selectAuthorInfoById" resultMap="AuthorInfoVO">
+        select t.author_id,t.author_name,t.affiliation,COUNT(m.author_id) AS paperCount,SUM(citing_count) AS citation from authorinfo AS t,documentinfo AS m
+        where t.author_id = #{id}
+        AND (m.author_id LIKE CONCAT(#{id},';%')
+        OR m.author_id LIKE CONCAT('%;',#{id},';%'))
+    </select>
+
+    <select id="selectAuthorTopicsById" resultType="String">
+        select group_concat(terms separator '') as topics from documentinfo as t
+        where t.author_id like concat(#{id},';%')
+        or t.author_id like concat('%;',#{id},';%')
+    </select>
+
+    <select id="selectAuthorInfoByName" resultMap="AuthorInfoVO">
+        select t.author_id,t.author_name,t.affiliation,COUNT(t.author_id) AS paperCount,SUM(citing_count) AS citation from
+        (SELECT * from authorinfo
+         where author_name like CONCAT('%',#{name},'%')) t JOIN documentinfo AS m
+        on (m.author_id LIKE CONCAT(t.author_id,';%')
+        OR m.author_id LIKE CONCAT('%;',t.author_id,';%'))
+        GROUP BY t.author_id
+    </select>
+
+
+    <resultMap id="AuthorVO" type="com.example.oasisdemo.vo.AuthorVO">
+        <id column="author_id" property="author_id"></id>
+        <result column="author_name" property="author_name"></result>
+        <result property="affiliation" column="affiliation"></result>
+        <result property="affiliation_id" column="affiliation_id"></result>
+    </resultMap>
+
+    <resultMap id="AuthorPortraitVO" type="com.example.oasisdemo.vo.AuthorPortraitVO">
+        <constructor>
+            <idArg column="author_id" javaType="java.lang.Integer"/>
+            <arg column="author_name" javaType="java.lang.String"/>
+            <arg column="affiliation_id" javaType="java.lang.Integer"/>
+            <arg column="affiliation" javaType="java.lang.String"/>
+            <arg column="publication_count" javaType="java.lang.Integer"/>
+            <arg column="PublicationYears" javaType="java.lang.String"/>
+            <arg column="PaperTitles" javaType="java.lang.String"/>
+            <arg column="Keywords" javaType="java.lang.String"/>
+            <arg column="heat" javaType="java.lang.Integer"/>
+        </constructor>
+<!--        <id column="author_id" property="author_id"></id>-->
+<!--        <result column="author_name" property="author_name"></result>-->
+<!--        <result property="affiliation_id" column="affiliation_id"></result>-->
+<!--        <result property="affiliation" column="affiliation"></result>-->
+<!--        <result property="publication_count" column="publication_count"></result>-->
+    </resultMap>
+
+    <resultMap id="RelationVO" type="com.example.oasisdemo.vo.RelationVO">
+        <result column="a_name" property="a_name"></result>
+        <result column="a_id" property="a_id"></result>
+        <result column="a_affiliation" property="a_affiliation"></result>
+        <result column="b_name" property="b_name"></result>
+        <result column="b_id" property="b_id"></result>
+        <result column="b_affiliation" property="b_affiliation"></result>
+        <result column="relation" property="relation"></result>
+        <result column="coworkpapers" property="coworkpapers"></result>
+    </resultMap>
+
+    <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
+        <result column="author_id" property="author_id"></result>
+        <result column="author_name" property="author_name"></result>
+        <result column="paperCount" property="author_paperCount"></result>
+        <result column="citation" property="citation"></result>
+<!--        <result column="affiliation" property="affiliation"></result>-->
+        <collection property="affiliation" ofType="java.lang.String" >
+            <result column="affiliation"/>
+        </collection>
+
+    </resultMap>
+
+    <resultMap id="PaperVO" type="com.example.oasisdemo.vo.PaperVO">
+        <result column="doi" property="doi"></result>
+        <result column="title" property="title"></result>
+        <result column="citing_count" property="citation"></result>
+    </resultMap>
+
+</mapper>

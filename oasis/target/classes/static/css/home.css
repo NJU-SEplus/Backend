@@ -1,0 +1,132 @@
+body{
+	position: relative;
+}
+
+.img-thumbnail > .thumbnail{
+	border: none;
+}
+
+
+.img-thumbnail a{
+	text-decoration: none;
+	color: black;
+}
+
+
+.search-container{
+	margin-bottom: 20px;
+}
+
+
+.search-bar select.form-control{
+	height: 40px;
+	border-radius: 0;
+	margin-right: 0;
+	background-color: gainsboro;
+
+}
+
+.search-bar input[type=text]{
+	width: 600px;
+	height: 40px;
+	border-radius: 0;
+	margin-left: 0;
+}
+
+.search-bar input[type=button]{
+	height: 40px;
+	border-radius: 0;
+	margin-left:0 ;
+	width: 80px;
+	background-color: #ffb800;
+	border: none;
+}
+
+/*#search-btn{
+	background-color: #ffb800;
+	width: 80px;
+}*/
+
+.search-div{
+	float: left;
+}
+
+.advanced-search {
+	margin: 20px auto;
+	opacity: 0.8;
+	width: 160px;
+	height: 30px;
+	position: relative;
+	/*background-color: cornflowerblue;*/
+	/*top: 45px*/
+}
+
+.advanced-search a {
+	background-color: cornflowerblue;
+	display: inline-block;
+	font-size: 17px;
+	color: black;
+	padding: 5px;
+}
+
+.advanced-search a:link{
+	text-decoration: none;
+}
+
+.advanced-search a:hover{
+	color: black;
+}
+
+
+.caption h4{
+	height: 40px;
+}
+
+.caption > p{
+	position: relative;
+	top:10px;
+}
+
+
+.not-img {
+	text-align: center;
+	opacity: 0.5;
+}
+
+
+@media only screen and (min-width:770px ) {
+	#thumbs > *:not(last-child){
+		width: 30%;
+		margin-right: 20px;
+	}
+	#thumbs2 > *:not(last-child){
+		width: 30%;
+		margin-right: 20px;
+
+	}
+	footer#home-navbar{
+		background-color: #333;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	body:last-child:after{
+		content: "";
+		display: table;
+		height: 240px;
+	}
+
+}
+
+@media only screen and (max-width:991px ) {
+	.search-bar input[type=text]{
+		width: 400px;
+	}
+}
+
+@media only screen and (max-width:652px ) {
+	.search-bar input[type=text]{
+		width: 300px;
+	}
+}

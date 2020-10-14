@@ -1,0 +1,30 @@
+footer.navbar{
+	background-color: #333;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+span.text-info{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*#chart{*/
+/*	width: 500px;*/
+/*	height: 500px;*/
+/*}*/
+
+hr{
+	color: #1E9FFF;
+	border: 1px solid #1E9FFF;
+	width: 85%;
+	margin: 10px auto;
+}
+
+/*#charts6 {*/
+/*	width: 900px;*/
+/*	height: 600px;*/
+/*	margin: 10px auto;*/
+/*}*/

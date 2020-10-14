@@ -1,0 +1,47 @@
+footer.navbar{
+	background-color: #333;
+	position: relative;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	margin-top: 20px;
+}
+
+.empty-div{
+	margin: 10px auto;
+	background-color: gainsboro;
+	height: 30px;
+}
+
+.search-span{
+	display: inline-block;
+	width: 100px;
+}
+
+input[type=text]{
+	border-radius: 1;
+	width: 300px;
+}
+form{
+	padding-left: 50px;
+}
+
+form > div{
+	margin-bottom:10px ;
+}
+
+body > .container{
+	margin-bottom: 130px;
+}
+
+.not-img{
+	text-align: center;
+	opacity: 0.5;
+}
+
+@media only screen and (min-width:760px ) {
+	.btn-warning{
+		position: relative;
+		right: 100px;
+	}
+}
