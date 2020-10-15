@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.authorservice.data.AuthorDisplay.AuthorDisplayMapper">
+
+    <select id="selectAuthorPapersById" resultMap="PaperVO">
+        select * from documentinfo as t
+        where t.author_id like concat(#{id},';%')
+        or t.author_id like concat('%;',#{id},';%')
+    </select>
+
+    <select id="selectAuthorInfoById" resultMap="AuthorInfoVO">
+        select t.author_id,t.author_name,t.affiliation,COUNT(m.author_id) AS paperCount,SUM(citing_count) AS citation from authorinfo AS t,documentinfo AS m
+        where t.author_id = #{id}
+        AND (m.author_id LIKE CONCAT(#{id},';%')
+        OR m.author_id LIKE CONCAT('%;',#{id},';%'))
+    </select>
+
+    <select id="selectAuthorTopicsById" resultType="String">
+        select group_concat(terms separator '') as topics from documentinfo as t
+        where t.author_id like concat(#{id},';%')
+        or t.author_id like concat('%;',#{id},';%')
+    </select>
+
+    <select id="selectAuthorInfoByName" resultMap="AuthorInfoVO">
+        select t.author_id,t.author_name,t.affiliation,COUNT(t.author_id) AS paperCount,SUM(citing_count) AS citation from
+        (SELECT * from authorinfo
+         where author_name like CONCAT('%',#{name},'%')) t JOIN documentinfo AS m
+        on (m.author_id LIKE CONCAT(t.author_id,';%')
+        OR m.author_id LIKE CONCAT('%;',t.author_id,';%'))
+        GROUP BY t.author_id
+    </select>
+
+
+    <resultMap id="AuthorInfoVO" type="com.example.authorservice.vo.AuthorInfoVO">
+        <result column="author_id" property="author_id"></result>
+        <result column="author_name" property="author_name"></result>
+        <result column="paperCount" property="author_paperCount"></result>
+        <result column="citation" property="citation"></result>
+<!--        <result column="affiliation" property="affiliation"></result>-->
+        <collection property="affiliation" ofType="java.lang.String" >
+            <result column="affiliation"/>
+        </collection>
+
+    </resultMap>
+
+    <resultMap id="PaperVO" type="com.example.authorservice.vo.PaperVO">
+        <result column="doi" property="doi"></result>
+        <result column="title" property="title"></result>
+        <result column="citing_count" property="citation"></result>
+    </resultMap>
+
+</mapper>
