@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9e03ecf-7684-4e86-a33c-83cbebb2ebeb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_cors_filter_2_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_thetransactioncompany_java_property_utils_1_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/filter/CrossDomainFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oasis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/oasis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +32,6 @@
         <option name="mavenHome" value="C:\Users\eggle\.m2\wrapper\dists\apache-maven-3.6.3-bin\1iopthnavndlasol9gbrbg6bf2\apache-maven-3.6.3" />
       </MavenGeneralSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="width" value="1400" />
-    <option name="height" value="995" />
   </component>
   <component name="ProjectId" id="1hzvBL75SaJyIe9JXu7Sh5FzJOD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -210,12 +200,24 @@
       <workItem from="1602847197455" duration="109000" />
       <workItem from="1602848069583" duration="703000" />
       <workItem from="1602849233957" duration="108000" />
-      <workItem from="1603003919848" duration="737000" />
+      <workItem from="1603003919848" duration="1422000" />
     </task>
+    <task id="LOCAL-00001" summary="+cors">
+      <created>1603004806109</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1603004806109</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="+cors" />
+    <option name="LAST_COMMIT_MESSAGE" value="+cors" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601026675936">
@@ -239,6 +241,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="707" y="446" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1920.1080@0.0.1920.1080" timestamp="1603004660645" />
+    <state x="517" y="106" key="CommitChangelistDialog2" timestamp="1603004805427">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="517" y="106" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603004805427" />
     <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1602849342351">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -299,6 +305,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603004662334" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1603004826843">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603004826843" />
     <state x="334" y="200" key="new project wizard" timestamp="1601123070008">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
