@@ -202,7 +202,7 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
                 Set<String> wordSet=res.keySet();
                 String topic=aff.get(i);
                 //如果已经有这个单词了，
-                if(topic.equals("\r")){
+                if(topic.equals("\r")||topic.equals("NA")){
                     continue;
                 }
                 if(wordSet.contains(topic))

@@ -198,7 +198,7 @@
       <workItem from="1602847197455" duration="109000" />
       <workItem from="1602848069583" duration="703000" />
       <workItem from="1602849233957" duration="108000" />
-      <workItem from="1603003919848" duration="3152000" />
+      <workItem from="1603003919848" duration="3979000" />
     </task>
     <task id="LOCAL-00001" summary="+cors">
       <created>1603004806109</created>
@@ -249,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603007071480</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="+crossOrigin">
+      <created>1603007328710</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603007328710</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,10 +289,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="707" y="446" key="#com.intellij.javaee.module.view.common.J2EE.J2EEDeploymentDescriptorLocationPanel.changeDDPath/0.0.1920.1080@0.0.1920.1080" timestamp="1603004660645" />
-    <state x="491" y="115" key="CommitChangelistDialog2" timestamp="1603007070746">
+    <state x="491" y="115" key="CommitChangelistDialog2" timestamp="1603007327980">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="491" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603007070746" />
+    <state x="491" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1603007327980" />
     <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1602849342351">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -346,10 +353,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1603004662334" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1603007073865">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1603007330646">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603007073865" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1603007330646" />
     <state x="334" y="200" key="new project wizard" timestamp="1601123070008">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
