@@ -5,7 +5,7 @@ import com.example.oasisdemo.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://101.132.151.29", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, maxAge = 60L)
+//@CrossOrigin(origins = "http://101.132.151.29", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, maxAge = 60L)
 @RestController
 public class AuthorDisplayController {
     @Autowired
