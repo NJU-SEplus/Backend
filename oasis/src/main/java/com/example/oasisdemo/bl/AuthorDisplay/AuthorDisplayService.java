@@ -32,4 +32,9 @@ public interface AuthorDisplayService {
      * @return AuthorInfoVO
      */
     ResponseVO showAuthorByPubCnt();
+    /**
+     * 返回热度前十作者信息
+     * @return AuthorInfoVO
+     */
+    ResponseVO showAuthorByHeat();
 }

@@ -38,6 +38,11 @@ public class AuthorInfoVO {
      */
     private List<String> affiliation;
 
+    /**
+     * 作者热度
+     */
+    private int heat;
+
     public String getAuthor_id() {
         return author_id;
     }
@@ -80,6 +85,14 @@ public class AuthorInfoVO {
 
     public int getCitation() {
         return citation;
+    }
+
+    public int getHeat() {
+        return heat;
+    }
+
+    public void setHeat(int heat) {
+        this.heat = heat;
     }
 
     public void setCitation(int citation) {

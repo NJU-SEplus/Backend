@@ -20,5 +20,7 @@ public interface AuthorDisplayMapper {
 
     List<AuthorInfoVO> selectAuthorInfoByName(@Param("name") String name);
 
-    List<AuthorInfoVO> selectAuthorByPubCnt(@Param("limit") int limit);
+    List<AuthorInfoVO> selectAuthorByPubCnt();
+
+    List<AuthorInfoVO> selectAuthorByHeat();
 }

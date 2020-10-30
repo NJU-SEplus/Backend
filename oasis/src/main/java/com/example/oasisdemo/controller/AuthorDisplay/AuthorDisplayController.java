@@ -35,4 +35,9 @@ public class AuthorDisplayController {
     public ResponseVO showAuthorInfoByPubCnt(){
         return authorDisplayService.showAuthorByPubCnt();
     }
+
+    @RequestMapping(value = "/author/showbyheat",method = RequestMethod.GET )
+    public ResponseVO showAuthorInfoByHeat(){
+        return authorDisplayService.showAuthorByHeat();
+    }
 }

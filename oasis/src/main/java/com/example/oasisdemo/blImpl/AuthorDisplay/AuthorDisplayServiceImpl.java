@@ -96,7 +96,18 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
     @Override
     public ResponseVO showAuthorByPubCnt() {
         try {
-            List<AuthorInfoVO> res=authorDisplayMapper.selectAuthorByPubCnt(10);
+            List<AuthorInfoVO> res=authorDisplayMapper.selectAuthorByPubCnt();
+            return ResponseVO.buildSuccess(res);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
+    @Override
+    public ResponseVO showAuthorByHeat() {
+        try {
+            List<AuthorInfoVO> res=authorDisplayMapper.selectAuthorByHeat();
             return ResponseVO.buildSuccess(res);
         } catch (Exception e){
             e.printStackTrace();

@@ -9,7 +9,7 @@
     </select>
 
     <select id="selectAuthorInfoById" resultMap="AuthorInfoVO">
-        select t.author_id,t.author_name,t.affiliation,COUNT(m.author_id) AS paperCount,SUM(citing_count) AS citation from authorinfo AS t,documentinfo AS m
+        select t.author_id,t.author_name,t.affiliation,t.publish_count,t.heat,SUM(citing_count) AS citation from authorinfo_copy1_copy1 AS t,documentinfo AS m
         where t.author_id = #{id}
         AND (m.author_id LIKE CONCAT(#{id},';%')
         OR m.author_id LIKE CONCAT('%;',#{id},';%'))
@@ -22,19 +22,32 @@
     </select>
 
     <select id="selectAuthorInfoByName" resultMap="AuthorInfoVO">
-        select t.author_id,t.author_name,t.affiliation,COUNT(t.author_id) AS paperCount,SUM(citing_count) AS citation from
-        (SELECT * from authorinfo
+        select t.author_id,t.author_name,t.affiliation,t.publish_count,SUM(citing_count) AS citation from
+        (SELECT * from authorinfo_copy1_copy1
          where author_name like CONCAT('%',#{name},'%')) t JOIN documentinfo AS m
         on (m.author_id LIKE CONCAT(t.author_id,';%')
         OR m.author_id LIKE CONCAT('%;',t.author_id,';%'))
         GROUP BY t.author_id
     </select>
 
+    <select id="selectAuthorByPubCnt" resultMap="AuthorInfoVO">
+        select t.author_name,t.affiliation,t.publish_count,t.heat,t.author_id from authorinfo_copy1_copy1 as t
+        order by t.publish_count desc
+        limit 10
+    </select>
+
+    <select id="selectAuthorByHeat" resultMap="AuthorInfoVO">
+        select t.author_name,t.affiliation,t.publish_count,t.heat,t.author_id from authorinfo_copy1_copy1 as t
+        order by t.heat desc
+        limit 10
+    </select>
+
     <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
         <result column="author_id" property="author_id"></result>
         <result column="author_name" property="author_name"></result>
-        <result column="paperCount" property="author_paperCount"></result>
+        <result column="publish_count" property="author_paperCount"></result>
         <result column="citation" property="citation"></result>
+        <result column="heat" property="heat"></result>
 <!--        <result column="affiliation" property="affiliation"></result>-->
         <collection property="affiliation" ofType="java.lang.String" >
             <result column="affiliation"/>
