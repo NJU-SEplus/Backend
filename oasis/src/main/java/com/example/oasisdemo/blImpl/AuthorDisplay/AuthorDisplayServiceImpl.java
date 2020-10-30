@@ -118,7 +118,15 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
     @Override
     public ResponseVO showResearchDirectionById(String id) {
         try {
-            String res=authorDisplayMapper.selectAuthorDirections(id);
+            String keyword=authorDisplayMapper.selectAuthorDirections(id);
+            String[] splits=keyword.split("%");
+            HashMap<String,String> res=new HashMap<>();
+            for(int i=1;i<splits.length;i+=2){
+                if(i==splits.length-1)
+                    res.put(splits[i],"");
+                else
+                    res.put(splits[i],splits[i+1]);
+            }
             return ResponseVO.buildSuccess(res);
         } catch (Exception e){
             e.printStackTrace();
