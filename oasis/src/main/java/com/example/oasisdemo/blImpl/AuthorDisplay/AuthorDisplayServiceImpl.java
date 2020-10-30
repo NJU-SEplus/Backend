@@ -82,9 +82,9 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
     }
 
     @Override
-    public ResponseVO getAuthorInfoByName(String name) {
+    public ResponseVO getAuthorInfoByName(String name,int pageNum,int pageSize) {
         try {
-            PageHelper.startPage(1,10);
+            PageHelper.startPage(pageNum,pageSize);
             PageInfo<AuthorInfoVO> res  = new PageInfo<AuthorInfoVO>(authorDisplayMapper.selectAuthorInfoByName(name));
             return ResponseVO.buildSuccess(res);
         } catch (Exception e){
@@ -108,6 +108,17 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
     public ResponseVO showAuthorByHeat() {
         try {
             List<AuthorInfoVO> res=authorDisplayMapper.selectAuthorByHeat();
+            return ResponseVO.buildSuccess(res);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
+    @Override
+    public ResponseVO showResearchDirectionById(String id) {
+        try {
+            String res=authorDisplayMapper.selectAuthorDirections(id);
             return ResponseVO.buildSuccess(res);
         } catch (Exception e){
             e.printStackTrace();

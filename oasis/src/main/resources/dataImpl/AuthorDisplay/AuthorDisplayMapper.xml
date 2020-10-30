@@ -42,6 +42,11 @@
         limit 10
     </select>
 
+    <select id="selectAuthorDirections" resultType="String">
+        select t.author_keyword from authorinfo_copy1_copy1 as t
+        where t.author_id = #{id}
+    </select>
+
     <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
         <result column="author_id" property="author_id"></result>
         <result column="author_name" property="author_name"></result>

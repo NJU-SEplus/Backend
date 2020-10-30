@@ -26,7 +26,7 @@ public interface AuthorDisplayService {
      * @param name
      * @return AuthorInfoVO
      */
-    ResponseVO getAuthorInfoByName(String name);
+    ResponseVO getAuthorInfoByName(String name,int pageNum,int pageSize);
     /**
      * 返回发文量前十作者信息
      * @return AuthorInfoVO
@@ -37,4 +37,9 @@ public interface AuthorDisplayService {
      * @return AuthorInfoVO
      */
     ResponseVO showAuthorByHeat();
+    /**
+     * 返回作者随时间变化兴趣点
+     * @return Map<Integer,List<String>>
+     */
+    ResponseVO showResearchDirectionById(String id);
 }

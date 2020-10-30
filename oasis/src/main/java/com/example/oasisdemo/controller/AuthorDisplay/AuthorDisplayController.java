@@ -27,8 +27,8 @@ public class AuthorDisplayController {
     }
 
     @RequestMapping(value = "/search/name",method = RequestMethod.GET )
-    public ResponseVO getAuthorInfoByName(@RequestParam("name") String name){
-        return authorDisplayService.getAuthorInfoByName(name);
+    public ResponseVO getAuthorInfoByName(@RequestParam("name") String name,@RequestParam("pageNum") int pageNum,@RequestParam("pageSize") int pageSize){
+        return authorDisplayService.getAuthorInfoByName(name,pageNum,pageSize);
     }
 
     @RequestMapping(value = "/author/showByPublishCount",method = RequestMethod.GET )
@@ -39,5 +39,10 @@ public class AuthorDisplayController {
     @RequestMapping(value = "/author/showbyheat",method = RequestMethod.GET )
     public ResponseVO showAuthorInfoByHeat(){
         return authorDisplayService.showAuthorByHeat();
+    }
+
+    @RequestMapping(value = "/author/showResearchDirection",method = RequestMethod.GET )
+    public ResponseVO showResearchDirectionById(@RequestParam("id") String id){
+        return authorDisplayService.showResearchDirectionById(id);
     }
 }

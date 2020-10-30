@@ -23,4 +23,6 @@ public interface AuthorDisplayMapper {
     List<AuthorInfoVO> selectAuthorByPubCnt();
 
     List<AuthorInfoVO> selectAuthorByHeat();
+
+    String selectAuthorDirections(@Param("id") String id);
 }
