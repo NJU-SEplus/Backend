@@ -15,6 +15,13 @@ spring:
 
 mybatis:
     mapper-locations: classpath:dataImpl/*/*Mapper.xml
+# mybatis 分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: "true"
+    params: count=countSql
+
 
 eureka:
     client:
