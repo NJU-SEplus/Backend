@@ -119,15 +119,23 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
     public ResponseVO showResearchDirectionById(String id) {
         try {
             String keyword=authorDisplayMapper.selectAuthorDirections(id);
+            List<ResearchDirectionVO> list=new ArrayList<ResearchDirectionVO>();
             String[] splits=keyword.split("%");
-            HashMap<String,String> res=new HashMap<>();
+            //HashMap<String,String> res=new HashMap<>();
             for(int i=1;i<splits.length;i+=2){
-                if(i==splits.length-1)
-                    res.put(splits[i],"");
-                else
-                    res.put(splits[i],splits[i+1]);
+                ResearchDirectionVO rd=new ResearchDirectionVO();
+                if(i==splits.length-1) {
+                    rd.setYear(splits[i]);
+                    String[] s={""};
+                    rd.setDirection(s);
+                }
+                else{
+                    rd.setYear(splits[i]);
+                    rd.setDirection(splits[i+1].split(";"));
+                }
+                list.add(rd);
             }
-            return ResponseVO.buildSuccess(res);
+            return ResponseVO.buildSuccess(list);
         } catch (Exception e){
             e.printStackTrace();
             return ResponseVO.buildFailure("失败");
