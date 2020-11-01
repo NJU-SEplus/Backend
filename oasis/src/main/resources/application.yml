@@ -12,6 +12,8 @@ spring:
         cache: false
     jackson:
         time-zone: GMT+8
+    application:
+        name: author-client
 
 mybatis:
     mapper-locations: classpath:dataImpl/*/*Mapper.xml
