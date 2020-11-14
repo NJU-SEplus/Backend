@@ -42,4 +42,9 @@ public interface AuthorDisplayService {
      * @return Map<Integer,List<String>>
      */
     ResponseVO showResearchDirectionById(String id);
+    /**
+     * 返回论文合作者
+     * @return CollaboratorVO
+     */
+    ResponseVO showCollaboratorsById(String id);
 }

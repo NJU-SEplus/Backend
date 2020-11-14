@@ -142,4 +142,15 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
         }
     }
 
+    @Override
+    public ResponseVO showCollaboratorsById(String id) {
+        try {
+            List<CollaboratorVO> res=authorDisplayMapper.selectCollaboratorById(id);
+            return ResponseVO.buildSuccess(res);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
 }

@@ -45,4 +45,9 @@ public class AuthorDisplayController {
     public ResponseVO showResearchDirectionById(@RequestParam("id") String id){
         return authorDisplayService.showResearchDirectionById(id);
     }
+
+    @RequestMapping(value = "/author/relation",method = RequestMethod.GET )
+    public ResponseVO showCollaboratorsById(@RequestParam("id") String id){
+        return authorDisplayService.showCollaboratorsById(id);
+    }
 }
