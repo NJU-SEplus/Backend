@@ -51,7 +51,7 @@
         select Bid as id,Bname as name,CoWorkTimes,CoWorkDocument as paperTitles,CoWorkDOI as paperDOIs from relation as t
         where t.Aid=#{id}
         union
-        select Aid as id,Bname as name,CoWorkTimes,CoWorkDocument as paperTitles,CoWorkDOI as paperDOIs from relation as r
+        select Aid as id,Aname as name,CoWorkTimes,CoWorkDocument as paperTitles,CoWorkDOI as paperDOIs from relation as r
         where r.Bid=#{id}
     </select>
 
