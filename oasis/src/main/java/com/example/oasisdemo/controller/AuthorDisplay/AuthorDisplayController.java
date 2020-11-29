@@ -50,4 +50,9 @@ public class AuthorDisplayController {
     public ResponseVO showCollaboratorsById(@RequestParam("id") String id){
         return authorDisplayService.showCollaboratorsById(id);
     }
+
+    @RequestMapping(value = "/paper/citedPapers",method = RequestMethod.GET )
+    public ResponseVO showCitedPapersByDoi(@RequestParam("doi") String doi){
+        return authorDisplayService.showCitedPapersByDoi(doi);
+    }
 }

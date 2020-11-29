@@ -19,7 +19,7 @@ public class PaperVO {
     private int citation;
 
     /**
-     * 论文引用列表
+     * 论文引用数
      */
     private List<String> citedPapers;
 

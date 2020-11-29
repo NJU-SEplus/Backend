@@ -55,6 +55,11 @@
         where r.Bid=#{id}
     </select>
 
+    <select id="selectCitedPapersByDoi" resultType="String">
+        select `references` FROM (SELECT * from documentinfo AS d
+        where d.doi=#{doi}) AS t left JOIN `references` AS r on r.`title`=t.`title`
+    </select>
+
     <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
         <result column="author_id" property="author_id"></result>
         <result column="author_name" property="author_name"></result>

@@ -153,4 +153,22 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
         }
     }
 
+    @Override
+    public ResponseVO showCitedPapersByDoi(String doi) {
+        try {
+            String references=authorDisplayMapper.selectCitedPapersByDoi(doi);
+            List<CitedPaperVO> res=new ArrayList<>();
+            String temp[]=references.split("%");
+            int i=1;
+            while(2*i<temp.length){
+                res.add(new CitedPaperVO(temp[2*i],temp[2*(i+1)],temp[2*(i+2)].substring(0,temp[2*(i+2)].length()-2)));
+                i+=3;
+            }
+            return ResponseVO.buildSuccess(res);
+        } catch (Exception e){
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
 }

@@ -47,6 +47,19 @@
         where t.author_id = #{id}
     </select>
 
+    <select id="selectCollaboratorById" resultMap="CollaboratorVO">
+        select Bid as id,Bname as name,CoWorkTimes,CoWorkDocument as paperTitles,CoWorkDOI as paperDOIs from relation as t
+        where t.Aid=#{id}
+        union
+        select Aid as id,Aname as name,CoWorkTimes,CoWorkDocument as paperTitles,CoWorkDOI as paperDOIs from relation as r
+        where r.Bid=#{id}
+    </select>
+
+    <select id="selectCitedPapersByDoi" resultType="String">
+        select `references` FROM (SELECT * from documentinfo AS d
+        where d.doi=#{doi}) AS t left JOIN `references` AS r on r.`title`=t.`title`
+    </select>
+
     <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
         <result column="author_id" property="author_id"></result>
         <result column="author_name" property="author_name"></result>
@@ -64,6 +77,16 @@
         <result column="doi" property="doi"></result>
         <result column="title" property="title"></result>
         <result column="citing_count" property="citation"></result>
+    </resultMap>
+
+    <resultMap id="CollaboratorVO" type="com.example.oasisdemo.vo.CollaboratorVO">
+        <constructor>
+            <arg column="id" javaType="java.lang.String" />
+            <arg column="name" javaType="java.lang.String"/>
+            <arg column="CoWorkTimes" javaType="java.lang.Integer"/>
+            <arg column="paperTitles" javaType="java.lang.String"/>
+            <arg column="paperDOIs" javaType="java.lang.String"/>
+        </constructor>
     </resultMap>
 
 </mapper>

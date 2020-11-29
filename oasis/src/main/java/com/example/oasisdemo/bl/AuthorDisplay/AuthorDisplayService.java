@@ -47,4 +47,9 @@ public interface AuthorDisplayService {
      * @return CollaboratorVO
      */
     ResponseVO showCollaboratorsById(String id);
+    /**
+     * 返回引用列表
+     * @return CitedPaperVO
+     */
+    ResponseVO showCitedPapersByDoi(String doi);
 }
