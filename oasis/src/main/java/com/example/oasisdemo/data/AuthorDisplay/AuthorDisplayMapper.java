@@ -29,4 +29,6 @@ public interface AuthorDisplayMapper {
     List<CollaboratorVO> selectCollaboratorById(@Param("id") String id);
 
     String selectCitedPapersByDoi(@Param("doi") String doi);
+
+    List<AuthorInfoVO> selectAuthorInfoByKeyword(@Param("keyword") String keyword);
 }

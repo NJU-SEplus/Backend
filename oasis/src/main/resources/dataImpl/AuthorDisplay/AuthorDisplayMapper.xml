@@ -60,6 +60,14 @@
         where d.doi=#{doi}) AS t left JOIN `references` AS r on r.`title`=t.`title`
     </select>
 
+    <select id="selectAuthorInfoByKeyword" resultMap="AuthorInfoVO">
+        select t.author_id,t.author_name,t.affiliation,t.publish_count,t.heat from authorinfo_copy1_copy1 AS t
+        where t.author_keyword LIKE CONCAT('%','computer vision','%')
+          AND t.heat>=200
+        order by heat Desc
+        limit 20
+    </select>
+
     <resultMap id="AuthorInfoVO" type="com.example.oasisdemo.vo.AuthorInfoVO">
         <result column="author_id" property="author_id"></result>
         <result column="author_name" property="author_name"></result>

@@ -2,10 +2,12 @@ package com.example.oasisdemo.controller.AuthorDisplay;
 
 import com.example.oasisdemo.bl.AuthorDisplay.AuthorDisplayService;
 import com.example.oasisdemo.vo.ResponseVO;
+import com.example.oasisdemo.vo.RecommondParamVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = {"http://101.132.151.29","http://120.55.43.25:8088/"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, maxAge = 60L)
+@CrossOrigin(origins ="*")
+//@CrossOrigin(origins = {"http://101.132.151.29","http://120.55.43.25:8088/","http://localhost:8088"}, methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}, maxAge = 60L)
 @RestController
 public class AuthorDisplayController {
     @Autowired
@@ -54,5 +56,10 @@ public class AuthorDisplayController {
     @RequestMapping(value = "/paper/citedPapers",method = RequestMethod.GET )
     public ResponseVO showCitedPapersByDoi(@RequestParam("doi") String doi){
         return authorDisplayService.showCitedPapersByDoi(doi);
+    }
+
+    @RequestMapping(value = "/author/reviewerRecommended",method = RequestMethod.POST)
+    public ResponseVO reviewerRecommended(@RequestBody RecommondParamVO recommondParamVO){
+        return authorDisplayService.reviewerRecommended(recommondParamVO);
     }
 }

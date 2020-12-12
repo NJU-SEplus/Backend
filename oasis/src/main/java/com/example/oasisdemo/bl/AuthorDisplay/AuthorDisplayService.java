@@ -1,5 +1,6 @@
 package com.example.oasisdemo.bl.AuthorDisplay;
 
+import com.example.oasisdemo.vo.RecommondParamVO;
 import com.example.oasisdemo.vo.ResponseVO;
 
 public interface AuthorDisplayService {
@@ -52,4 +53,9 @@ public interface AuthorDisplayService {
      * @return CitedPaperVO
      */
     ResponseVO showCitedPapersByDoi(String doi);
+    /**
+     * 返回审稿人推荐列表
+     * @return Reviewers
+     */
+    ResponseVO reviewerRecommended(RecommondParamVO recommondParamVO);
 }
