@@ -62,4 +62,9 @@ public class AuthorDisplayController {
     public ResponseVO reviewerRecommended(@RequestBody RecommondParamVO recommondParamVO){
         return authorDisplayService.reviewerRecommended(recommondParamVO);
     }
+
+    @RequestMapping(value = "/author/interestPredict",method = RequestMethod.GET)
+    public ResponseVO interestPredict(@RequestParam("id") String id){
+        return authorDisplayService.interestPredict(id);
+    }
 }

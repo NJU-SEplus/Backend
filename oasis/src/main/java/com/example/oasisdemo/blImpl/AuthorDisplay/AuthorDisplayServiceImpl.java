@@ -214,6 +214,50 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
             return ResponseVO.buildFailure("失败");
         }
     }
+
+    @Override
+    public ResponseVO interestPredict(String id) {
+        try {
+            List<CollaboratorVO> collas=authorDisplayMapper.selectCollaboratorById(id);
+            String temp="";
+            for(CollaboratorVO colla:collas){
+                temp+=authorDisplayMapper.selectAuthorTopicsById(colla.getColla_id());
+            }
+
+            List<String> aff=Arrays.asList(temp.split("\n|;"));
+            HashMap<String,Integer> res=new HashMap<>();
+            for(int i=0;i<aff.size();i++){
+                Set<String> wordSet=res.keySet();
+                String topic=aff.get(i);
+                //如果已经有这个单词了，
+                if(topic.equals("\r")||topic.equals("NA")){
+                    continue;
+                }
+                if(wordSet.contains(topic))
+                {
+                    Integer number=res.get(topic);
+                    number++;
+                    res.put(topic, number);
+                }
+                else {
+                    res.put(topic, 1);
+                }
+            }
+            List<HashMap.Entry<String, Integer>> list = new ArrayList<HashMap.Entry<String, Integer>>(res.entrySet());
+            Collections.sort(list, new Comparator<HashMap.Entry<String, Integer>>() {
+                //降序排序
+                @Override
+                public int compare(HashMap.Entry<String, Integer> o1, HashMap.Entry<String, Integer> o2) {
+                    return o2.getValue().compareTo(o1.getValue());
+                }
+            });
+            return ResponseVO.buildSuccess(list.subList(0,4));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
     public static float getSimilarityRatio(String str, String target) {
 
         int d[][]; // 矩阵

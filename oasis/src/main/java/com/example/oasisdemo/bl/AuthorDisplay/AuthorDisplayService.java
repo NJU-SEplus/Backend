@@ -58,4 +58,9 @@ public interface AuthorDisplayService {
      * @return Reviewers
      */
     ResponseVO reviewerRecommended(RecommondParamVO recommondParamVO);
+    /**
+     * 返回作者兴趣预测
+     * @return List<String>
+     */
+    ResponseVO interestPredict(String id);
 }
