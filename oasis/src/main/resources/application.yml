@@ -29,7 +29,7 @@ pagehelper:
 eureka:
     client:
         service-url:
-            #defaultZone: http://eurekaservice:8761/eureka/
-            defaultZone: http://localhost:8761/eureka/
+            defaultZone: http://eurekaservice:8761/eureka/
+            #defaultZone: http://localhost:8761/eureka/
 server:
     port: 8088
