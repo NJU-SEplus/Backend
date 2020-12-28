@@ -187,10 +187,13 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
                 }
             }
             if(recommondParamVO.getAuthorID()!=null){
-                List<CollaboratorVO> Coll=authorDisplayMapper.selectCollaboratorById(recommondParamVO.getAuthorID());
-                for (CollaboratorVO collaborator:
-                     Coll) {
-                    id2reviewers.remove(collaborator.getColla_id());
+                List<String> AuthorID=recommondParamVO.getAuthorID();
+                for(String id:AuthorID) {
+                    List<CollaboratorVO> Coll = authorDisplayMapper.selectCollaboratorById(id);
+                    for (CollaboratorVO collaborator :
+                            Coll) {
+                        id2reviewers.remove(collaborator.getColla_id());
+                    }
                 }
             }
             ArrayList<AuthorInfoVO> revlist=new ArrayList<>(id2reviewers.values());
@@ -205,6 +208,7 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
             }
             revlist=new ArrayList<>(id2reviewers.values());
             ArrayList<AuthorInfoVO> res=new ArrayList<>();
+            ArrayList<String> name=new ArrayList<>();
             for(int i=0;i<5;i++){
                 res.add(revlist.get((int)(Math.random()*revlist.size())));
             }

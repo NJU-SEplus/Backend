@@ -9,13 +9,13 @@ public class RecommondParamVO {
     /**
      * 作者姓名
      */
-    private String authorName;
+    private List<String> authorName;
 
 
     /**
      * 作者id
      */
-    private String authorID;
+    private List<String> authorID;
 
     /**
      * 机构名称
@@ -50,19 +50,20 @@ public class RecommondParamVO {
         this.documentName = documentName;
     }
 
-    public String getAuthorName() {
+
+    public List<String> getAuthorName() {
         return authorName;
     }
 
-    public void setAuthorName(String authorName) {
+    public void setAuthorName(List<String> authorName) {
         this.authorName = authorName;
     }
 
-    public String getAuthorID() {
+    public List<String> getAuthorID() {
         return authorID;
     }
 
-    public void setAuthorID(String authorID) {
+    public void setAuthorID(List<String> authorID) {
         this.authorID = authorID;
     }
 
