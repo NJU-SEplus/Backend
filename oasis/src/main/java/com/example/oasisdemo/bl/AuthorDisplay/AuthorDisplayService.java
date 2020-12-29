@@ -60,7 +60,12 @@ public interface AuthorDisplayService {
     ResponseVO reviewerRecommended(RecommondParamVO recommondParamVO);
     /**
      * 返回作者兴趣预测
-     * @return List<String>
+     * @return Map<Integer,List<String>>
      */
     ResponseVO interestPredict(String id);
+    /**
+     * 返回作者兴趣预测
+     * @return Map<Integer,List<String>>
+     */
+    ResponseVO collaboratorPredict(String id);
 }

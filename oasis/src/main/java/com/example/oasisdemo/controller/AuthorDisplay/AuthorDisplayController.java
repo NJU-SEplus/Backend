@@ -67,4 +67,9 @@ public class AuthorDisplayController {
     public ResponseVO interestPredict(@RequestParam("id") String id){
         return authorDisplayService.interestPredict(id);
     }
+
+    @RequestMapping(value = "/author/collaboratorPredict",method = RequestMethod.GET)
+    public ResponseVO collaboratorPredict(@RequestParam("id") String id){
+        return authorDisplayService.collaboratorPredict(id);
+    }
 }

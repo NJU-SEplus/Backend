@@ -99,4 +99,5 @@ public class CollaboratorVO {
             this.coPaperList.add(new coPaper(titles[i],dois[i]));
         }
     }
+
 }

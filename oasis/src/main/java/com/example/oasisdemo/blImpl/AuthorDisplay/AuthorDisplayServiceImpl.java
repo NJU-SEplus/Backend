@@ -262,6 +262,51 @@ public class AuthorDisplayServiceImpl implements  AuthorDisplayService{
         }
     }
 
+    @Override
+    public ResponseVO collaboratorPredict(String id) {
+        try {
+            List<CollaboratorVO> collas=authorDisplayMapper.selectCollaboratorById(id);
+
+
+            List<CollaboratorVO> cocollas=new ArrayList<>();
+            for(CollaboratorVO colla:collas){
+                cocollas.addAll(authorDisplayMapper.selectCollaboratorById(colla.getColla_id()));
+            }
+
+            HashMap<CollaboratorVO,Integer> res=new HashMap<>();
+            Set<CollaboratorVO> cocollaSet = res.keySet();
+            for(CollaboratorVO cocolla:cocollas){
+                if(!collas.contains(cocolla)) {
+                    if (cocollaSet.contains(cocolla)) {
+                        Integer number = res.get(cocolla);
+                        number++;
+                        res.put(cocolla, number);
+                    } else {
+                        res.put(cocolla, 1);
+                    }
+                }
+            }
+
+            List<HashMap.Entry<CollaboratorVO, Integer>> list = new ArrayList<HashMap.Entry<CollaboratorVO, Integer>>(res.entrySet());
+            Collections.sort(list, new Comparator<HashMap.Entry<CollaboratorVO, Integer>>() {
+                //降序排序
+                @Override
+                public int compare(HashMap.Entry<CollaboratorVO, Integer> o1, HashMap.Entry<CollaboratorVO, Integer> o2) {
+                    return o2.getValue().compareTo(o1.getValue());
+                }
+            });
+
+            List<CocollaVO> resList=new ArrayList<>();
+            for(HashMap.Entry<CollaboratorVO, Integer> entry:list){
+                resList.add(new CocollaVO(entry));
+            }
+            return ResponseVO.buildSuccess(resList.subList(0,4));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseVO.buildFailure("失败");
+        }
+    }
+
     public static float getSimilarityRatio(String str, String target) {
 
         int d[][]; // 矩阵
