@@ -23,13 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb59c960-5e75-4502-97f4-f12c682115f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/vo/CocollaVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/bl/AuthorDisplay/AuthorDisplayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/bl/AuthorDisplay/AuthorDisplayService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/blImpl/AuthorDisplay/AuthorDisplayServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/blImpl/AuthorDisplay/AuthorDisplayServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/controller/AuthorDisplay/AuthorDisplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/controller/AuthorDisplay/AuthorDisplayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/vo/CollaboratorVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/oasisdemo/vo/CollaboratorVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/oasisdemo/data/AuthorDisplay/AuthorDisplayMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/oasisdemo/data/AuthorDisplay/AuthorDisplayMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/oasisdemo/data/AuthorDisplay/AuthorDisplayMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/oasisdemo/data/AuthorDisplay/AuthorDisplayMapperTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +69,8 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../author-service/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -87,12 +86,18 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.oasisdemo.data.AuthorDisplay" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.oasisdemo.blImpl.AuthorDisplay" />
       <recent name="com.example.oasisdemo.vo" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OasisdemoApplication">
+  <component name="RunManager" selected="JUnit.AuthorDisplayMapperTest.testSelectAuthorInfoById">
     <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -106,7 +111,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthorDisplayMapperTest.selectAuthorInfoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorDisplayMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="oasis" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +121,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.oasisdemo.data.AuthorDisplay" />
       <option name="MAIN_CLASS_NAME" value="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapperTest" />
-      <option name="METHOD_NAME" value="selectAuthorInfoById" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorDisplayMapperTest.selectAuthorDirections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="oasis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.oasisdemo.data.AuthorDisplay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.oasisdemo.data.AuthorDisplay" />
+      <option name="MAIN_CLASS_NAME" value="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapperTest" />
+      <option name="METHOD_NAME" value="selectAuthorDirections" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthorDisplayMapperTest.selectAuthorInfoByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorDisplayMapperTest.testSelectAuthorInfoById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="oasis" />
       <extension name="coverage">
         <pattern>
@@ -132,13 +152,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.oasisdemo.data.AuthorDisplay" />
       <option name="MAIN_CLASS_NAME" value="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapperTest" />
-      <option name="METHOD_NAME" value="selectAuthorInfoByName" />
+      <option name="METHOD_NAME" value="testSelectAuthorInfoById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthorDisplayMapperTest.selectAuthorPapersById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AuthorDisplayMapperTest.testSelectAuthorInfoByName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="oasis" />
       <extension name="coverage">
         <pattern>
@@ -148,23 +168,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.oasisdemo.data.AuthorDisplay" />
       <option name="MAIN_CLASS_NAME" value="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapperTest" />
-      <option name="METHOD_NAME" value="selectAuthorPapersById" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthorDisplayMapperTest.selectAuthorTopicsById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="oasis" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.oasisdemo.data.AuthorDisplay.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.oasisdemo.data.AuthorDisplay" />
-      <option name="MAIN_CLASS_NAME" value="com.example.oasisdemo.data.AuthorDisplay.AuthorDisplayMapperTest" />
-      <option name="METHOD_NAME" value="selectAuthorTopicsById" />
+      <option name="METHOD_NAME" value="testSelectAuthorInfoByName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,11 +189,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthorDisplayMapperTest.testSelectAuthorInfoById" />
         <item itemvalue="Spring Boot.OasisdemoApplication" />
-        <item itemvalue="JUnit.AuthorDisplayMapperTest.selectAuthorInfoByName" />
-        <item itemvalue="JUnit.AuthorDisplayMapperTest.selectAuthorTopicsById" />
-        <item itemvalue="JUnit.AuthorDisplayMapperTest.selectAuthorInfoById" />
-        <item itemvalue="JUnit.AuthorDisplayMapperTest.selectAuthorPapersById" />
+        <item itemvalue="JUnit.AuthorDisplayMapperTest" />
+        <item itemvalue="JUnit.AuthorDisplayMapperTest.selectAuthorDirections" />
+        <item itemvalue="JUnit.AuthorDisplayMapperTest.testSelectAuthorInfoByName" />
       </list>
     </recent_temporary>
   </component>
@@ -245,7 +249,11 @@
       <workItem from="1606626927212" duration="3502000" />
       <workItem from="1609077228975" duration="606000" />
       <workItem from="1609242338953" duration="2338000" />
-      <workItem from="1609245376225" duration="2832000" />
+      <workItem from="1609245376225" duration="2950000" />
+      <workItem from="1609254934791" duration="459000" />
+      <workItem from="1609296551271" duration="1006000" />
+      <workItem from="1609338914372" duration="452000" />
+      <workItem from="1609339454775" duration="935000" />
     </task>
     <task id="LOCAL-00001" summary="+cors">
       <created>1603004806109</created>
@@ -373,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609077818297</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="+合作者预测">
+      <created>1609248319869</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1609248319869</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +430,8 @@
     <MESSAGE value="+修改研究兴趣格式" />
     <MESSAGE value="+relation" />
     <MESSAGE value="+兴趣预测" />
-    <option name="LAST_COMMIT_MESSAGE" value="+兴趣预测" />
+    <MESSAGE value="+合作者预测" />
+    <option name="LAST_COMMIT_MESSAGE" value="+合作者预测" />
   </component>
   <component name="WindowStateProjectService">
     <state x="684" y="362" key="#Notifications" timestamp="1604048933626">
@@ -426,10 +442,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="414" y="194" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1601026675936" />
-    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1602676291463">
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1609340550961">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1602676291463" />
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609340550961" />
     <state x="718" y="185" key="#com.intellij.ide.util.MemberChooser" timestamp="1609248100098">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -447,50 +463,50 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="690" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1606629166924" />
-    <state x="491" y="115" key="CommitChangelistDialog2" timestamp="1609077817732">
+    <state x="491" y="115" key="CommitChangelistDialog2" timestamp="1609248319102">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="491" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1609077817732" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1609247506572">
+    <state x="491" y="115" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1609248319102" />
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1609340531563">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531563" />
+    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1609340531562">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1601818777151" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531562" />
+    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1609340531562">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1601818777151" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531562" />
+    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1609340531563">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.1.bottom" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531563" />
+    <state width="1877" height="242" key="GridCell.Tab.1.bottom" timestamp="1609340531557">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.1.center" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531557" />
+    <state width="1877" height="242" key="GridCell.Tab.1.center" timestamp="1609340531557">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.1.left" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531557" />
+    <state width="1877" height="242" key="GridCell.Tab.1.left" timestamp="1609340531557">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
-    <state width="1877" height="242" key="GridCell.Tab.1.right" timestamp="1609247506572">
+    <state width="1877" height="242" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531557" />
+    <state width="1877" height="242" key="GridCell.Tab.1.right" timestamp="1609340531557">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1493" height="183" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1601818777152" />
-    <state width="1877" height="242" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609247506572" />
+    <state width="1877" height="242" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1609340531557" />
     <state width="1877" height="363" key="GridCell.Tab.2.bottom" timestamp="1602677284850">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -511,14 +527,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="440" y="114" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1609246988131" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1609077820547">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1609248324063">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1609077820547" />
-    <state x="763" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609242502091">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1609248324063" />
+    <state x="763" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609339732438">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="763" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1609242502091" />
+    <state x="763" y="452" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1609339732438" />
+    <state x="677" y="246" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1609339073237">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="677" y="246" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1609339073237" />
     <state x="334" y="200" key="new project wizard" timestamp="1601123070008">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
